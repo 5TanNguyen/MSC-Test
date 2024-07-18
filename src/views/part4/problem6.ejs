@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 6: Custom API Request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('../layout/nav') %>
+        <br>
+        <div class="container">
+            <h2 class="text-center">List of Banks </h2>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Short name</th>
+                        <th>Code</th>
+                        <th>Logo</th>
+                    </tr>
+                </thead>
+                <% if(listBank.length> 0){ %>
+                    <% for(var i=0; i <listBank.length; i++){ %>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <%- listBank[i].id %>
+                                </th>
+
+                                <td>
+                                    <%- listBank[i].name %>
+                                </td>
+
+                                <td>
+                                    <%- listBank[i].short_name %>
+                                </td>
+
+                                <td>
+                                    <%- listBank[i].code %>
+                                </td>
+
+                                <td>
+                                    <img src="<%- listBank[i].logo %>" alt="" width="200" height="120">
+                                </td>
+                            </tr>
+                        </tbody>
+                        <% } %>
+
+                            <% }else { %>
+                                <h1>Data Not Found !</h1>
+                                <% } %>
+            </table>
+        </div>
+
+
+
+
+
+
+</body>
+
+</html>
