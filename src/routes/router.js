@@ -8,7 +8,7 @@ let router = express.Router();
 
 let initWebRouters = (app) => {
     // PART 1
-    router.get('/part-1/problem-1', partOneController.problem1);
+    router.get('/', partOneController.problem1);
     router.post('/part-1/problem-1', partOneController.postProblem1);
     router.get('/part-1/problem-2', partOneController.getDisplayProblem2);
     router.post('/part-1/problem-2', partOneController.postProblem2);
